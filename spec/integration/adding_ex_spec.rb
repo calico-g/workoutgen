@@ -11,7 +11,7 @@ feature 'Can add an exercise' do
 		choose "cardio"
 		attach_file "Photo", "spec/fixtures/kitty.jpg"
 		fill_in "url", :with => "http://en.wikipedia.org/wiki/Running"
-		click_button "Add"
+		click_button "Save"
 		page.should have_content "Exercise added to list."
 		page.should have_content "running"
 	end

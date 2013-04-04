@@ -7,3 +7,4 @@ Here is the exercise you clicked on.
 <%= @ex.asset %><br>
 <%= @ex.url %><br>
 
+<%= link_to "edit", edit_ex_path %> <%= link_to "delete", ex_path, :method => :delete, :confirm => "Are you sure?" %>
