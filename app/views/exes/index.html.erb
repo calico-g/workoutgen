@@ -1,5 +1,6 @@
 <h2>Exercises</h2>
 
+<%= link_to "Add exercise", new_ex_path %>
 <ul>
 	<% @exes.each do |ex| %>
 		<li><%= link_to ex.name, ex%></li>

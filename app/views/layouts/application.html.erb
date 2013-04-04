@@ -7,8 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= link_to "Add exercise", new_ex_path %>
-
 	<% flash.each do |key, value| %>
 	  <div class='flash' id='<%=key %>'>
   	  <%= value %>
