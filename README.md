@@ -1,4 +1,5 @@
 Random Workout Generator
+------------------------
 
 Need to workout but hate thinking about working out? Do you wish that your workout would just generate itself, especially in the moring when you're too disoriented to think?
 
