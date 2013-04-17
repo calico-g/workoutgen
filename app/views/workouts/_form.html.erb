@@ -1,0 +1,34 @@
+<%= form_for (@workout) do |f| %>
+	<p>
+		Good morning! How long do you have to work out today?
+	</p>
+	<p>
+		<%= f.label :total %>
+		<%= f.text_field :total %>
+	</p>
+	<p>
+		How many minutes of that would you like to be cardio?
+	</p>
+	<p>
+		<%= f.label :cardio %>
+		<%= f.text_field :cardio %>
+	</p>
+	<p>
+		How many minutes would you like to be strength training?
+	</p>
+	<p>
+		<%= f.label :strength %>
+		<%= f.text_field :strength %>
+	</p>
+	<p>
+		How many minutes for stretching?
+	</p>
+	<p>
+		<%= f.label :stretch %>
+		<%= f.text_field :stretch %>
+	</p>
+	<p>
+		<%= f.submit "Generate" %>
+	</p>
+
+<% end %>

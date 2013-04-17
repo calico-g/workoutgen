@@ -36,7 +36,7 @@ class ExesController < ApplicationController
 
 		if @ex.save
     	flash[:notice] = "Exercise updated!"
-      redirect_to exes_path
+      redirect_to ex_path
     else
       flash[:alert] = "Exercise did not save. Fix that shit."
       render :action => "edit"
