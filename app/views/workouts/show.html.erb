@@ -17,8 +17,13 @@ this will display the generated workout
 	<%= strengths.first(:offset => rand(strengths.count)).name %>
 	<br>
 <% end %>
-
+<br>
+<br>
 <% stretches = Ex.where("category = 'stretch'") %>
 <%= stretches.select(:name).all %>
-
+<br>
+<% for i in 1..@workout.stretch/2 %>
+	<%= stretches.first(:offset => rand(stretches.count)).name %>
+	<br>
+<% end %>
 
