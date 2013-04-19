@@ -1,1 +1,13 @@
 this will display the generated workout
+<br>
+<%= @workout.cardio %>
+
+<br>
+<% cardios = Ex.where("category = 'cardio'") %>
+<%= cardios.select(:name).all %>
+<br>
+<%= cardios.first(:offset => rand(cardios.count)).name %>
+<br>
+<% strengths = Ex.where("category = 'strength'") %>
+<%= strengths.select(:name).all %>
+
