@@ -1,29 +1,23 @@
 this will display the generated workout
 <br>
-<%= @workout.cardio %>
-
 <br>
 <% cardios = Ex.where("category = 'cardio'") %>
-<%= cardios.select(:name).all %>
-<br>
 <%= cardios.first(:offset => rand(cardios.count)).name %>
 <br>
-
-<% strengths = Ex.where("category = 'strength'") %>
-<%= strengths.select(:name).all %>
 <br>
-<br>
-<% for i in 1..@workout.strength/2 %>
-	<%= strengths.first(:offset => rand(strengths.count)).name %>
-	<br>
+<ul>
+<% @workout.exercises.each do |ex| %>
+	<li><%= ex.name %></li>
 <% end %>
+</ul>
 <br>
-<br>
+
 <% stretches = Ex.where("category = 'stretch'") %>
-<%= stretches.select(:name).all %>
-<br>
 <% for i in 1..@workout.stretch/2 %>
 	<%= stretches.first(:offset => rand(stretches.count)).name %>
 	<br>
 <% end %>
+<br>
+
+<%= cardios.first(:offset => rand(cardios.count)).name %>
 
