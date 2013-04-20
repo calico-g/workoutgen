@@ -4,7 +4,6 @@ Here is the exercise you clicked on.
 <%= @ex.name %><br>
 <%= @ex.description %><br>
 <%= @ex.category %><br>
-<%= image_tag (@ex.image_url) %><br>
+<%= image_tag(@ex.image_url, :width => '30%') %><br>
 <%= link_to @ex.url, @ex.url, :target => '_blank' %><br>
-<%= image_tag @ex.asset.url %><br>
 <%= link_to "edit", edit_ex_path %> <%= link_to "delete", ex_path, :method => :delete, :confirm => "Are you sure?" %>
