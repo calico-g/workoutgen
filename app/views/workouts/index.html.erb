@@ -1,24 +1,28 @@
-This will display the generated workout
+Here is your workout. Enjoy!
 <br>
 <br>
-<%= @workout.cardios.name %>
+<% if @workout.cardio > 0 %>
+	<%= @workout.cardios.name %>
+<% end %>
 <br>
 <br>
 <ul>
-<% @workout.strengths.each do |ex| %>
-	<li><%= ex.name %></li>
-<% end %>
+	<% @workout.strengths.each do |ex| %>
+		<li><%= ex.name %></li>
+	<% end %>
 </ul>
 <br>
 <br>
 <ul>
-<% @workout.stretches.each do |ex| %>
-	<li><%= ex.name %></li>
-<% end %>
+	<% @workout.stretches.each do |ex| %>
+		<li><%= ex.name %></li>
+	<% end %>
 </ul>
 <br>
 <br>
-<%= @workout.cardios.name %>
+<% if @workout.cardio > 0 %>
+	<%= @workout.cardios.name %>
+<% end %>
 
 
 

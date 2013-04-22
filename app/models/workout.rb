@@ -2,7 +2,7 @@ class Workout < ActiveRecord::Base
   attr_accessible :cardio, :strength, :stretch, :total
 
   def cardios
-  	cardios = Ex.where(:category => 'cardio')
+ 		cardios = Ex.where(:category => 'cardio')
   	cardios[rand(cardios.count)]
   end
 
