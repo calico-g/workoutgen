@@ -1,26 +1,24 @@
-This is the index page for workouts.
-
-this will display the generated workout
+This will display the generated workout
 <br>
 <br>
-<% cardios = Ex.where("category = 'cardio'") %>
-<%= cardios.first(:offset => rand(cardios.count)).name %>
+<%= @workout.cardios.name %>
 <br>
 <br>
 <ul>
-<% @exercises.workout.each do |ex| %>
+<% @workout.strengths.each do |ex| %>
 	<li><%= ex.name %></li>
 <% end %>
 </ul>
 <br>
-
-<% stretches = Ex.where("category = 'stretch'") %>
-<% for i in 1..@workout.stretch/2 %>
-	<%= stretches.first(:offset => rand(stretches.count)).name %>
-	<br>
-<% end %>
 <br>
+<ul>
+<% @workout.stretches.each do |ex| %>
+	<li><%= ex.name %></li>
+<% end %>
+</ul>
+<br>
+<br>
+<%= @workout.cardios.name %>
 
-<%= cardios.first(:offset => rand(cardios.count)).name %>
 
 
