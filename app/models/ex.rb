@@ -6,8 +6,10 @@ class Ex < ActiveRecord::Base
   									:url => "/assets/exes/:id/:basename.:extension",
   									:path => ":rails_root/public/assets/exes/:id/:basename.:extension",
   									:default_url => "/assets/noimage.jpg"
-  def image_url
+  validates :name, :presence => true
 
+
+  def image_url
   	if self[:image_url]
 			return self[:image_url]
 		else

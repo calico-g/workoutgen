@@ -2,7 +2,6 @@ class WorkoutsController < ApplicationController
 
 	def index
 		@workout = Workout.new(params[:workout])
-
 	end
 
 	def new

@@ -1,9 +1,10 @@
 Here is your workout. Enjoy!
 <br>
 <br>
-<% if @workout.cardio > 0 %>
-	<%= @workout.cardios.name %>
+<% if @workout.cardio == 0 %>
+	No cardio for you today. Have a nice break. :)
 <% end %>
+<%= @workout.cardios %>
 <br>
 <br>
 <ul>
@@ -12,7 +13,6 @@ Here is your workout. Enjoy!
 	<% end %>
 </ul>
 <br>
-<br>
 <ul>
 	<% @workout.stretches.each do |ex| %>
 		<li><%= ex.name %></li>
@@ -20,9 +20,7 @@ Here is your workout. Enjoy!
 </ul>
 <br>
 <br>
-<% if @workout.cardio > 0 %>
-	<%= @workout.cardios.name %>
-<% end %>
+<%= @workout.cardios %>
 
 
 

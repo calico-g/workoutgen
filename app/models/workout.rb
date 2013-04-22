@@ -1,9 +1,12 @@
 class Workout < ActiveRecord::Base
   attr_accessible :cardio, :strength, :stretch, :total
+  validates :total, :presence => true
 
   def cardios
- 		cardios = Ex.where(:category => 'cardio')
-  	cardios[rand(cardios.count)]
+  	if cardio > 0
+ 			cardios = Ex.where(:category => 'cardio')
+  		cardios[rand(cardios.count)].name
+  	end
   end
 
   def strengths
