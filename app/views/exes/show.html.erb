@@ -1,9 +1,6 @@
-Here is the exercise you clicked on.
-<br>
-
-<%= @ex.name %><br>
+<strong><%= @ex.name %></strong><br>
 <%= @ex.description %><br>
 <%= @ex.category %><br>
-<%= image_tag(@ex.image_url, :width => '30%') %><br>
+<%= image_tag(@ex.image_url, :width => '400') %><br>
 <%= link_to @ex.url, @ex.url, :target => '_blank' %><br>
 <%= link_to "edit", edit_ex_path %> <%= link_to "delete", ex_path, :method => :delete, :confirm => "Are you sure?" %>

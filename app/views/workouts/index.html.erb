@@ -1,26 +1,39 @@
-Here is your workout. Enjoy!
-<br>
-<br>
-<% if @workout.cardio == 0 %>
-	No cardio for you today. Have a nice break. :)
-<% end %>
-<%= @workout.cardios %>
-<br>
-<br>
-<ul>
-	<% @workout.strengths.each do |ex| %>
-		<li><%= ex.name %></li>
+<p>Here is your workout. Enjoy!</p>
+<p>
+	<% if @workout.cardio == 0 %>
+		No cardio for you today. Have a nice break. :)
+	<% else %>
+		<ul>
+			<li>
+				<%= link_to @workout.cardios.name,
+				:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
+			</li>
+		</ul>
 	<% end %>
-</ul>
-<br>
-<ul>
-	<% @workout.stretches.each do |ex| %>
-		<li><%= ex.name %></li>
+</p>
+<p>
+	<ul>
+		<% @workout.strengths.each do |ex| %>
+			<li><%= link_to ex.name,
+			:controller => 'exes', :action => 'show', :id => ex.id  %></li>
+		<% end %>
+	</ul>
+</p>
+<p>
+	<ul>
+		<% @workout.stretches.each do |ex| %>
+			<li><%= link_to ex.name,
+			:controller => 'exes', :action => 'show', :id => ex.id %></li>
+		<% end %>
+	</ul>
+</p>
+<p>
+	<% if @workout.cardio > 0 %>
+		<ul>
+			<li>
+				<%= link_to @workout.cardios.name,
+				:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
+			</li>
+		</ul>
 	<% end %>
-</ul>
-<br>
-<br>
-<%= @workout.cardios %>
-
-
-
+</p>
