@@ -1,4 +1,4 @@
-<p>Here is your workout. Enjoy!</p>
+<p><h4>Here is your workout. Enjoy!</h4></p>
 <div>
 	<% if @workout.cardio == 0 %>
 		No cardio for you today. Have a nice break. :)
@@ -13,6 +13,7 @@
 	<% end %>
 </div>
 <div>
+<p>One minute of each!</p>
 	<ul>
 		<% @workout.strengths.each do |ex| %>
 			<li>
@@ -40,7 +41,7 @@
 			<li>
 				<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 				<%= link_to @workout.cardios.name,
-				:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
+					:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
 			</li>
 		</ul>
 	<% end %>
