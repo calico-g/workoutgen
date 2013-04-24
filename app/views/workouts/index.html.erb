@@ -1,39 +1,47 @@
 <p>Here is your workout. Enjoy!</p>
-<p>
+<div>
 	<% if @workout.cardio == 0 %>
 		No cardio for you today. Have a nice break. :)
 	<% else %>
 		<ul>
 			<li>
+				<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 				<%= link_to @workout.cardios.name,
 				:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
 			</li>
 		</ul>
 	<% end %>
-</p>
-<p>
+</div>
+<div>
 	<ul>
 		<% @workout.strengths.each do |ex| %>
-			<li><%= link_to ex.name,
-			:controller => 'exes', :action => 'show', :id => ex.id  %></li>
+			<li>
+				<%= image_tag(ex.image_url, :width => '150') %>
+				<%= link_to ex.name,
+					:controller => 'exes', :action => 'show', :id => ex.id %>
+			</li>
 		<% end %>
 	</ul>
-</p>
-<p>
+</div>
+<div>
 	<ul>
 		<% @workout.stretches.each do |ex| %>
-			<li><%= link_to ex.name,
-			:controller => 'exes', :action => 'show', :id => ex.id %></li>
+			<li>
+				<%= image_tag(ex.image_url, :width => '150') %>
+				<%= link_to ex.name,
+					:controller => 'exes', :action => 'show', :id => ex.id %>
+			</li>
 		<% end %>
 	</ul>
-</p>
-<p>
+</div>
+<div>
 	<% if @workout.cardio > 0 %>
 		<ul>
 			<li>
+				<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 				<%= link_to @workout.cardios.name,
 				:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
 			</li>
 		</ul>
 	<% end %>
-</p>
+</div>
