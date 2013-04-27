@@ -6,4 +6,14 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-  body {margin-top: 80px;}
+  body {
+  	margin-top: 80px;
+  }
+
+ 	ul {
+ 		list-style-type: none;
+ 	}
+
+ 	li {
+ 		padding-bottom: 10px;
+ 	}

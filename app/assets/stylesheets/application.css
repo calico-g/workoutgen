@@ -29,6 +29,11 @@ a:active {color:#0000FF;}  /* selected link */
 	background-color: #CCFFCC;
 }
 
-#footer {
+.footer {
+	margin-left: 75px;
 	margin-bottom: 5px;
+}
+
+.ex_name {
+	margin-left: 20px;
 }

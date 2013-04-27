@@ -63,7 +63,7 @@
           </div>
         </div><!--/row-->
 
-      <footer id="footer">
+      <footer class="footer">
         <p>&copy; Calico Goodrich 2013</p>
       </footer>
     </div> <!-- /container -->
@@ -73,11 +73,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
-    <% flash.each do |key, value| %>
-      <div class='flash' id='<%=key %>'>
-        <%= value %>
-      </div>
-    <% end %>
+
 
   </body>
 </html>

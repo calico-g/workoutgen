@@ -10,10 +10,10 @@ class Ex < ActiveRecord::Base
 
 
   def image_url
-  	if self[:image_url]
-			return self[:image_url]
+  	if !self[:image_url].empty? #there's a link to a picture
+			return self[:image_url] #return that
 		else
-			return asset.url
+			return asset.url #return uploaded image
 		end
   end
 
