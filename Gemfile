@@ -47,5 +47,7 @@ group :test, :development do
 	gem 'rspec-rails', '~>2.11'
 	gem 'factory_girl', '2.6.4'
 	gem "paperclip", "~> 3.0"
+	gem 'email_spec', '1.2.1'
+
 
 end
