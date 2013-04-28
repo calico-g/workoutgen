@@ -48,6 +48,7 @@ group :test, :development do
 	gem 'factory_girl', '2.6.4'
 	gem "paperclip", "~> 3.0"
 	gem 'email_spec', '1.2.1'
+	gem 'letter_opener'
 
 
 end
