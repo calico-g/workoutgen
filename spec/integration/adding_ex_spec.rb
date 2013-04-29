@@ -2,6 +2,20 @@ require 'spec_helper'
 
 feature 'Can add an exercise' do
 
+	before do
+		user = FactoryGirl.create(:user, :email => 'hello@example.com')
+		user.confirm!
+		visit '/'
+		click_link 'Exercises'
+		click_link 'Add exercise'
+		message = 'You need to sign in or sign up before continuing.'
+		page.should have_content(message)
+		fill_in 'Email', :with => 'hello@example.com'
+		fill_in 'Password', :with => 'password'
+		click_button 'Sign in'
+		page.should have_content 'Add an exercise'
+	end
+
 	scenario 'adding an exercise' do
 		visit '/'
 		click_link 'Exercises'

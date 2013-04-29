@@ -1,4 +1,7 @@
 class ExesController < ApplicationController
+
+before_filter :authenticate_user!, :except => [:index, :show]
+
 	def index
 		@exes = Ex.all
 	end
@@ -9,6 +12,7 @@ class ExesController < ApplicationController
 
 	def create
 		@ex = Ex.new(params[:ex])
+		@ex.user = current_user
 		@ex.save
 
     if @ex.save

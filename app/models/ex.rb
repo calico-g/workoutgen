@@ -7,6 +7,7 @@ class Ex < ActiveRecord::Base
   									:path => ":rails_root/public/assets/exes/:id/:basename.:extension",
   									:default_url => "/assets/noimage.jpg"
   validates :name, :category, :presence => true
+  belongs_to :user
 
 
   def image_url

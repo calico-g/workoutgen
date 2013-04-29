@@ -45,7 +45,7 @@ group :test, :development do
 	gem 'pry-doc'
 	gem 'pry-debugger'
 	gem 'rspec-rails', '~>2.11'
-	gem 'factory_girl', '2.6.4'
+	gem 'factory_girl_rails'
 	gem "paperclip", "~> 3.0"
 	gem 'email_spec', '1.2.1'
 	gem 'letter_opener'

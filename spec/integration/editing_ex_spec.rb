@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Editing an exercise' do
-	ex = Factory(:ex)
+	ex = FactoryGirl.create(:ex)
 
 	scenario 'can edit an exercise' do
 		visit '/'
