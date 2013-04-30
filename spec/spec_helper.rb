@@ -42,6 +42,8 @@ RSpec.configure do |config|
   #for Devise
   config.include Devise::TestHelpers, :type => :controller
 
+  #for FactoryGirl user sign in
   config.include AuthenticationHelpers, :type => :request
+
 
 end

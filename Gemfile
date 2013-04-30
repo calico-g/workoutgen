@@ -49,6 +49,6 @@ group :test, :development do
 	gem "paperclip", "~> 3.0"
 	gem 'email_spec', '1.2.1'
 	gem 'letter_opener'
-
+	gem 'database_cleaner'
 
 end

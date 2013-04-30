@@ -3,11 +3,15 @@ class ExesController < ApplicationController
 before_filter :authenticate_user!, :except => [:index, :show]
 
 	def index
-		@exes = Ex.all
+		if current_user
+			@exes = Ex.where(:user_id => current_user.id)
+		else
+			redirect_to new_user_session_path
+		end
 	end
 
 	def new
-		@ex = Ex.new
+		@ex = Ex.new(:user_id => current_user.id)
 	end
 
 	def create

@@ -2,17 +2,16 @@ require 'spec_helper'
 include Devise::TestHelpers
 
 feature 'Viewing list of exercises' do
-	# let!(:user_1) { Factory(:confirmed_user) }
- #  let!(:user_2) { Factory(:confirmed_user) }
+
   user_1 = FactoryGirl.create(:user)
   user_2 = FactoryGirl.create(:user)
   user_1.confirm!
   user_2.confirm!
 
-	ex1 = FactoryGirl.create(:ex, :name => 'pooping', :user => user_1)
-	ex2 = FactoryGirl.create(:ex, :name => 'jumping', :user => user_1)
-	# ex3 = Factory(:ex, :name => 'swimming with sharks', :user => user_1)
-	# ex4 = Factory(:ex, :name => 'running with big dogs', :user => user_1)
+  ex1 = FactoryGirl.create(:ex, :name => 'pooping', :user => user_1)
+  ex2 = FactoryGirl.create(:ex, :name => 'jumping', :user => user_1)
+  # ex3 = Factory(:ex, :name => 'swimming with sharks', :user => user_1)
+  # ex4 = Factory(:ex, :name => 'running with big dogs', :user => user_1)
 
   scenario "can view all exercises for a user in exercises view" do
     sign_in_as!(user_1)

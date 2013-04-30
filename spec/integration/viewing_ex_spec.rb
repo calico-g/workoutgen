@@ -1,7 +1,13 @@
 require 'spec_helper'
 
 feature 'Viewing an exercise' do
-		ex = FactoryGirl.create(:ex)
+
+	before do
+		user = FactoryGirl.create(:user)
+		user.confirm!
+		sign_in_as!(user)
+		ex = FactoryGirl.create(:ex, :user => user)
+	end
 
 	scenario 'can view an exercise' do
 		visit '/'
