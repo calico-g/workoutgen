@@ -39,4 +39,9 @@ RSpec.configure do |config|
   #for email_spec gem
   config.include EmailSpec::Helpers
 
+  #for Devise
+  config.include Devise::TestHelpers, :type => :controller
+
+  config.include AuthenticationHelpers, :type => :request
+
 end

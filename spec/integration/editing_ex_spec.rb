@@ -1,7 +1,14 @@
 require 'spec_helper'
+include Devise::TestHelpers
 
 feature 'Editing an exercise' do
-	ex = FactoryGirl.create(:ex)
+
+	before do
+		ex = FactoryGirl.create(:ex)
+		user = FactoryGirl.create(:user)
+		user.confirm!
+		sign_in_as!(user)
+	end
 
 	scenario 'can edit an exercise' do
 		visit '/'
