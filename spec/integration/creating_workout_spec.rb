@@ -2,17 +2,27 @@ require "spec_helper"
 
 feature 'Can generate a workout' do
 
-	scenario 'generating a workout' do
+	user_1 = FactoryGirl.create(:user, :id =>1)
+	user_2 = FactoryGirl.create(:user, :id =>2)
+	user_1.confirm!
+	user_2.confirm!
+	ex1 = FactoryGirl.create(:ex, :user => user_1, :name => 'running', :category => 'cardio')
+	ex2 = FactoryGirl.create(:ex, :user => user_1, :name => 'push ups', :category => 'strength')
+	ex3 = FactoryGirl.create(:ex, :user => user_1, :name => 'plies', :category => 'stretch')
+	ex4 = FactoryGirl.create(:ex, :user => user_2, :name => 'pooping', :category => 'cardio')
+
+	scenario 'generating a workout with only exercises for this user' do
 		visit '/'
+		sign_in_as!(user_1)
 		click_link 'Generate Workout'
 		fill_in 'Total', :with => '60'
 		fill_in 'Cardio', :with => '20'
 		fill_in 'Strength', :with => '20'
 		fill_in 'Stretch', :with => '20'
 		click_button 'Generate'
-		page.should have_content "Here's your workout. Enjoy!"
+		page.should have_content "Here is your workout. Enjoy!"
 		page.should have_content 'running'
-		#next write some more details for this test
+		page.should_not have_content 'pooping'
 	end
 end
 

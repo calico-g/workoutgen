@@ -45,5 +45,18 @@ RSpec.configure do |config|
   #for FactoryGirl user sign in
   config.include AuthenticationHelpers, :type => :request
 
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
+
 
 end
