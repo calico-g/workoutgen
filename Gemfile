@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 
+group :production do
+	gem 'pg'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem "paperclip", "~> 3.0"
 gem 'devise'
 
@@ -46,9 +48,10 @@ group :test, :development do
 	gem 'pry-debugger'
 	gem 'rspec-rails', '~>2.11'
 	gem 'factory_girl_rails'
-	gem "paperclip", "~> 3.0"
 	gem 'email_spec', '1.2.1'
 	gem 'letter_opener'
 	gem 'database_cleaner'
+	gem 'sqlite3'
+
 
 end
