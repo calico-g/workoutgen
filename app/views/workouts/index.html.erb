@@ -56,5 +56,5 @@
 			</li>
 		</ul>
 	<% end %>
-	This workout sucks. <%= link_to "Give me a new one.", workouts_path(params[:workout]), :method => 'get' %>
+	This workout sucks. <%= link_to "Give me a new one.", workouts_path(:workout => params[:workout]), :method => 'get' %>
 </div>
