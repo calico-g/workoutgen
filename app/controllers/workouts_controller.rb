@@ -4,6 +4,7 @@ class WorkoutsController < ApplicationController
 		@workout = Workout.new(params[:workout])
 		@workout.user_id = current_user.id
 
+		#makes sure there are exercises in the model
 		if @workout.cardio > 0 && Ex.where(:user_id => current_user.id, :category => :cardio).empty?
 			flash[:alert] = "You must add some cardio exercises"
 			redirect_to exes_path

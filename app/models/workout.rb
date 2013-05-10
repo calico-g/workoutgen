@@ -26,4 +26,10 @@ class Workout < ActiveRecord::Base
 			stretches[rand(stretches.count)]
 		end
 	end
+
+  def check_for_exes
+    if @workout.cardio > 0 && Ex.where(:user_id => current_user.id, :category => :cardio).empty?
+      flash[:alert] = "You must add some cardio exercises"
+      redirect_to exes_path
+  end
 end

@@ -6,7 +6,7 @@
 	<% else %>
 		<ul>
 			<li>
-				<p><%= @workout.cardio %> minutes!</p>
+				<p><%= @workout.cardio/2 %> minutes!</p>
 				<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 				<span class="ex_name">
 					<%= link_to @workout.cardios.name,
@@ -47,7 +47,7 @@
 	<% if @workout.cardio > 0 %>
 		<ul>
 			<li>
-				<p><%= @workout.cardio %> minutes!</p>
+				<p><%= @workout.cardio/2 %> minutes!</p>
 				<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 				<span class="ex_name">
 					<%= link_to @workout.cardios.name,
