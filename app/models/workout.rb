@@ -4,7 +4,7 @@ class Workout < ActiveRecord::Base
   																								:numericality => true
   																								{ :only_integer => true,
   																									:greater_than => -1 }
-  validates :total, :numericality => { :greater_than => 0 }
+  #validates :total, :numericality => { :greater_than => 0 }
 
   def cardios
   	if cardio > 0

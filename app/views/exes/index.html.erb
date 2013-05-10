@@ -1,6 +1,10 @@
 <div><h4>Exercises</h4></div>
-
-<div><%= link_to "Add exercise", new_ex_path %></div>
+<p>
+<% if @exes.empty? %>
+	You have no exercises. Please add some.
+<% end %>
+<div class='btn'><%= link_to "Add exercise", new_ex_path %></div>
+</p>
 <ul>
 	<% @exes.each do |ex| %>
 		<li><%= link_to ex.name, ex%></li>
