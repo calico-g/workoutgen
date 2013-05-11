@@ -20,8 +20,8 @@
 
 <div>
 <% if current_user.has_exes(:strength) %>
-	<p>One minute of each!</p>
 	<ul>
+		<p>One minute of each!</p>
 		<% @workout.strengths.each do |ex| %>
 			<li>
 			<%= image_tag(ex.image_url, :width => '150') %>
@@ -40,6 +40,7 @@
 <div>
 <% if current_user.has_exes(:stretch) %>
 	<ul>
+		<p>One minute of each!</p>
 		<% @workout.stretches.each do |ex| %>
 			<li>
 			<%= image_tag(ex.image_url, :width => '150') %>

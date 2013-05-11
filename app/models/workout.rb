@@ -1,6 +1,6 @@
 class Workout < ActiveRecord::Base
   attr_accessible :cardio, :strength, :stretch, :total, :user_id
-  validates :cardio,  :strength, :stretch, :total, :presence => true,
+  validates :cardio,  :strength, :stretch, :presence => true,
   																								:numericality => true
   																								{ :only_integer => true,
   																									:greater_than => -1 }
