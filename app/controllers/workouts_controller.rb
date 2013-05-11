@@ -8,10 +8,6 @@ class WorkoutsController < ApplicationController
 			flash[:alert] = "Please put a number in each field, even if it's zero. Thanks."
 			redirect_to new_workout_path
 		end
-
-		# if not current_user.has_exes(:category)
-		# 	flash[:alert] = "You are missing some categories of exercise."
-		# end
 	end
 
 	def new
