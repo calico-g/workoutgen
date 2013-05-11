@@ -19,13 +19,13 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		@ex.user = current_user
 		@ex.save
 
-    if @ex.save
-    	flash[:notice] = "Exercise added to list."
-      redirect_to exes_path
-    else
-      flash[:alert] = "Exercise did not save. Fix that shit."
-      render :action => "new"
-    end
+		if @ex.save
+    			flash[:notice] = "Exercise added to list."
+      			redirect_to exes_path
+    		else
+			flash[:alert] = "Exercise did not save. Fix that shit."
+			render :action => "new"
+    		end
 	end
 
 	def show
@@ -43,12 +43,12 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		end
 
 		if @ex.save
-    	flash[:notice] = "Exercise updated!"
-      redirect_to ex_path
-    else
-      flash[:alert] = "Exercise did not save. Fix that shit."
-      render :action => "edit"
-    end
+			flash[:notice] = "Exercise updated!"
+			redirect_to ex_path
+    		else
+      			flash[:alert] = "Exercise did not save. Fix that shit."
+      			render :action => "edit"
+    		end
 
 	end
 
@@ -61,5 +61,4 @@ before_filter :authenticate_user!, :except => [:index, :show]
 			redirect_to exes_path
 		end
 	end
-
 end
