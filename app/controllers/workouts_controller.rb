@@ -4,19 +4,14 @@ class WorkoutsController < ApplicationController
 		@workout = Workout.new(params[:workout])
 		@workout.user_id = current_user.id
 
-		#makes sure there are exercises in the model
-		if @workout.cardio > 0 && Ex.where(:user_id => current_user.id, :category => :cardio).empty?
-			flash[:alert] = "You must add some cardio exercises"
-			redirect_to exes_path
-		elsif
-			@workout.strength > 0 && Ex.where(:user_id => current_user.id, :category => :strength).empty?
-			flash[:alert] = "You must add some strength exercises"
-			redirect_to exes_path
-		elsif
-			@workout.stretch > 0 && Ex.where(:user_id => current_user.id, :category => :stretch).empty?
-			flash[:alert] = "You must add some stretch exercises"
-			redirect_to exes_path
+		if not @workout.valid?
+			flash[:alert] = "Please put a number in each field, even if it's zero. Thanks."
+			redirect_to new_workout_path
 		end
+
+		# if not current_user.has_exes(:category)
+		# 	flash[:alert] = "You are missing some categories of exercise."
+		# end
 	end
 
 	def new

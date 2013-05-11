@@ -11,5 +11,16 @@ class User < ActiveRecord::Base
 
   has_many :exes
 
+  def has_exes(cat)
+  	my_exes = Ex.where(:category => cat, :user_id => self.id)
+  	if my_exes == []
+    	return false
+  	else
+  		return true
+  	end
+  end
+
+
+
 
 end

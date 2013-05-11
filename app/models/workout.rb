@@ -1,6 +1,6 @@
 class Workout < ActiveRecord::Base
   attr_accessible :cardio, :strength, :stretch, :total, :user_id
-  validates :cardio, :strength, :stretch, :total, :presence => true,
+  validates :cardio,  :strength, :stretch, :total, :presence => true,
   																								:numericality => true
   																								{ :only_integer => true,
   																									:greater_than => -1 }
@@ -27,9 +27,4 @@ class Workout < ActiveRecord::Base
 		end
 	end
 
-  def check_for_exes
-    if @workout.cardio > 0 && Ex.where(:user_id => current_user.id, :category => :cardio).empty?
-      flash[:alert] = "You must add some cardio exercises"
-      redirect_to exes_path
-  end
 end
