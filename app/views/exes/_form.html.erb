@@ -5,27 +5,33 @@ Add an exercise
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 	</p>
+
 	<p>
 		<%= f.label :description %>
 		<%= f.text_area :description %>
 	</p>
+
 	<p>
 		<%= f.radio_button(:category, 'cardio', :id => 'cardio') %> Cardio
 		<%= f.radio_button(:category, 'strength', :id => 'strength') %> Strength
 		<%= f.radio_button(:category, 'stretch', :id => 'stretch') %> Stretch
 	</p>
+
 	<p>
 		<%= f.label :image_url, "url of photo" %>
 		<%= f.text_field :image_url %>
 	</p>
+	
 	<p>
 		<%= f.label :url, 'url' %>
 		<%= f.text_field :url %>
 	</p>
+	
 	<p>
 		<%= f.label :asset, "You can upload a photo if you'd like."%><br>
 		<%= f.file_field :asset %>
 	</p>
+	
 	<p>
 		<%= f.submit "Save" %>
 	</p>

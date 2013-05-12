@@ -19,6 +19,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		@ex.user = current_user
 		@ex.save
 
+<<<<<<< HEAD
     if @ex.save
     	flash[:notice] = "Exercise added to list."
       redirect_to exes_path
@@ -26,7 +27,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
       flash[:alert] = "Exercise must have a name and a category."
       render :action => "new"
     end
-
+=======
 		if @ex.save
     			flash[:notice] = "Exercise added to list."
       			redirect_to exes_path
@@ -34,6 +35,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 			flash[:alert] = "Exercise did not save. Fix that shit."
 			render :action => "new"
     		end
+>>>>>>> 0828b097313dd208a3e309acc39239e5fddc509c
 	end
 
 	def show
@@ -49,6 +51,16 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		if @ex.update_attributes(params[:ex])
 			@ex.save
 		end
+
+		if @ex.save
+			flash[:notice] = "Exercise updated!"
+			redirect_to ex_path
+    		else
+      			flash[:alert] = "Exercise did not save. Fix that shit."
+      			render :action => "edit"
+    		end
+
+	end
 
 	def destroy
 		@ex = Ex.find(params[:id])

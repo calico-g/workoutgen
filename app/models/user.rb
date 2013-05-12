@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   def has_exes(cat)
   	my_exes = Ex.where(:category => cat, :user_id => self.id)
-    !my_exes.empty?
+  	!my_exes.empty?
   end
 
 end
