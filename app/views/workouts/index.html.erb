@@ -3,8 +3,8 @@
 
 <div>
 <% if current_user.has_exes(:cardio) %>
-	<p><%= @workout.cardio/2 %> minutes!</p>
 	<ul>
+	<p><%= @workout.cardio/2 %> minutes!</p>
 	<li>
 		<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 		<span class="ex_name">
@@ -58,8 +58,8 @@
 
 <div>
 	<% if current_user.has_exes(:cardio) %>
-	<p><%= @workout.cardio/2 %> minutes!</p>
 	<ul>
+		<p><%= @workout.cardio/2 %> minutes!</p>
 		<li>
 		<%= image_tag(@workout.cardios.image_url, :width => '150') %>
 		<span class="ex_name">
