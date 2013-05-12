@@ -29,11 +29,11 @@ before_filter :authenticate_user!, :except => [:index, :show]
 
 		if @ex.save
     			flash[:notice] = "Exercise added to list."
-      			redirect_to exes_path
-    		else
+      		redirect_to exes_path
+    else
 			flash[:alert] = "Exercise did not save. Fix that shit."
 			render :action => "new"
-    		end
+    end
 	end
 
 	def show
@@ -49,6 +49,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		if @ex.update_attributes(params[:ex])
 			@ex.save
 		end
+	end
 
 	def destroy
 		@ex = Ex.find(params[:id])
