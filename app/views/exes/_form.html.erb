@@ -2,7 +2,7 @@ Add an exercise
 <%= form_for [(@ex)], :html => { :multipart => true } do |f| %>
 
 	<p>
-		<%= f.label :name %>
+		<%= f.label :name, "Name (required)" %>
 		<%= f.text_field :name %>
 	</p>
 
@@ -12,26 +12,27 @@ Add an exercise
 	</p>
 
 	<p>
+		<%= f.label :category, "Category (required)" %>
 		<%= f.radio_button(:category, 'cardio', :id => 'cardio') %> Cardio
 		<%= f.radio_button(:category, 'strength', :id => 'strength') %> Strength
 		<%= f.radio_button(:category, 'stretch', :id => 'stretch') %> Stretch
 	</p>
-
+<br>
 	<p>
-		<%= f.label :image_url, "url of photo" %>
-		<%= f.text_field :image_url %>
-	</p>
-	
-	<p>
-		<%= f.label :url, 'url' %>
-		<%= f.text_field :url %>
-	</p>
-	
-	<p>
-		<%= f.label :asset, "You can upload a photo if you'd like."%><br>
+		<%= f.label :asset, "You can upload a photo if you'd like"%>
 		<%= f.file_field :asset %>
 	</p>
-	
+
+	<p>
+		<%= f.label :image_url, "Or you can add the url of a photo" %>
+		<%= f.text_field :image_url %>
+	</p>
+
+	<p>
+		<%= f.label :url, 'You can add the url of a website' %>
+		<%= f.text_field :url %>
+	</p>
+
 	<p>
 		<%= f.submit "Save" %>
 	</p>
