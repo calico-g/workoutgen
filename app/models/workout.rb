@@ -4,13 +4,15 @@ class Workout < ActiveRecord::Base
   																								:numericality => true
   																								{ :only_integer => true,
   																									:greater_than => -1 }
-  #validates :total, :numericality => { :greater_than => 0 }
 
   def cardios
-  	if cardio > 0
- 			cardios = Ex.where(:category => 'cardio', :user_id => self.user_id)
-  		cardios[rand(cardios.count)]
-  	end
+    if cardio > 0
+ 	    cardios = Ex.where(:category => 'cardio', :user_id => self.user_id)
+      item = cardios[rand(cardios.count)]
+      [item]
+    else
+      []
+    end
   end
 
   def strengths

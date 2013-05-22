@@ -15,7 +15,7 @@ feature 'Can add an exercise' do
 		fill_in 'Name', :with => "running"
 		fill_in 'Description', :with => "putting one foot in front of the other"
 		choose "cardio"
-		attach_file "You can upload a photo if you'd like.", "spec/fixtures/kitty.jpg"
+		attach_file "You can upload a photo if you'd like", "spec/fixtures/kitty.jpg"
 		fill_in "url", :with => "http://en.wikipedia.org/wiki/Running"
 		click_button "Save"
 		page.should have_content "Exercise added to list."

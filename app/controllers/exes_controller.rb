@@ -40,6 +40,11 @@ before_filter :authenticate_user!, :except => [:index, :show]
 		@ex = Ex.find(params[:id])
 		if @ex.update_attributes(params[:ex])
 			@ex.save
+			flash[:notice] = "Exercise updated!"
+			redirect_to exes_path
+		else
+    	flash[:alert] = "Exercise must have a name and a category."
+      render :action => "new"
 		end
 	end
 

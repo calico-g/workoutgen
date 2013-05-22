@@ -4,24 +4,25 @@
 <div>
 <% if current_user.has_exes(:cardio) %>
 	<ul>
-	<p><%= @workout.cardio/2 %> minutes!</p>
-	<li>
-		<%= image_tag(@workout.cardios.image_url, :width => '150') %>
-		<span class="ex_name">
-		<%= link_to @workout.cardios.name,
-			:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
-		</span>
-	</li>
+			<% @workout.cardios.each do |ex| %>
+			<li>
+			<%= image_tag(ex.image_url, :width => '150') %>
+			<span class="ex_name">
+			<%= link_to ex.name,
+				:controller => 'exes', :action => 'show', :id => ex.id %>
+			</span>
+			</li>
+		<% end %>
 	</ul>
 <% else %>
-	<p>You don't have any cardio exercises yet. You can add some <%= link_to 'here', exes_path %></p>
+	<p>You don't have any cardio exercises yet.
+		 You can add some <%= link_to 'here', exes_path %></p>
 <% end %>
 </div>
 
 <div>
 <% if current_user.has_exes(:strength) %>
 	<ul>
-		<p>One minute of each!</p>
 		<% @workout.strengths.each do |ex| %>
 			<li>
 			<%= image_tag(ex.image_url, :width => '150') %>
@@ -40,7 +41,6 @@
 <div>
 <% if current_user.has_exes(:stretch) %>
 	<ul>
-		<p>One minute of each!</p>
 		<% @workout.stretches.each do |ex| %>
 			<li>
 			<%= image_tag(ex.image_url, :width => '150') %>
@@ -57,19 +57,21 @@
 </div>
 
 <div>
-	<% if current_user.has_exes(:cardio) %>
+<% if current_user.has_exes(:cardio) %>
 	<ul>
-		<p><%= @workout.cardio/2 %> minutes!</p>
-		<li>
-		<%= image_tag(@workout.cardios.image_url, :width => '150') %>
-		<span class="ex_name">
-		<%= link_to @workout.cardios.name,
-			:controller => 'exes', :action => 'show', :id => @workout.cardios.id %>
-		</span>
-		</li>
+			<% @workout.cardios.each do |ex| %>
+			<li>
+			<%= image_tag(ex.image_url, :width => '150') %>
+			<span class="ex_name">
+			<%= link_to ex.name,
+				:controller => 'exes', :action => 'show', :id => ex.id %>
+			</span>
+			</li>
+		<% end %>
 	</ul>
-	<% end %>
+<% end %>
 </div>
+
 
 <div>
 	This workout sucks. <%= link_to "Give me a new one.", workouts_path(:workout => params[:workout]), :method => 'get' %>
