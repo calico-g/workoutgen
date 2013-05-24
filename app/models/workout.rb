@@ -13,6 +13,10 @@ class Workout < ActiveRecord::Base
     else
       []
     end
+    # (1..cardio).to_a.map do
+    #   cardios[rand(cardios.count)]
+    # end
+    #this needs to return an array of one exercise
   end
 
   def strengths
